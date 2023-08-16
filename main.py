@@ -13,7 +13,7 @@ def run_async_task(task_name):
 
 if __name__ == '__main__':
     if random.choice([True, False]):
-        tasks = ['Task 1', 'Task 2', 'Task 3']
+        tasks = ['Task ' + str(i) for i in range(10**100)]
 
         with multiprocessing.Pool(processes=len(tasks)) as pool:
             pool.map(run_async_task, tasks)
